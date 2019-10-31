@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.primary{
+    background-color: indigo;
+    color: white;
+}
+.google{
+    background-color: indigo;
+    color: white;
+    width:100%;
+}
