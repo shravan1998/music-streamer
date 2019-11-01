@@ -1,6 +1,10 @@
 <br>
 <div class="container">
     <mat-card>
+      <div *ngIf="auth.user$ | async as user;else login">
+        {{user|json}}
+      </div>
+      <ng-template #login>
         <form class="example-form">
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Email">
@@ -15,8 +19,9 @@
           Or
           <br>
           <br>
-          <button mat-button class="google">
+          <button mat-button class="google" (click)="auth.doGoogleLogin()">
                 Sign In With Google
           </button>
+          </ng-template>
     </mat-card>
 </div>

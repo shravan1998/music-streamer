@@ -6,7 +6,12 @@
 
   <span>Search</span> &nbsp;
   <span>Library</span> &nbsp;
+  <span *ngIf="auth.user$|async as user;else login">
+    <span (click)="auth.signOut">Sign Out</span>
+  </span>
+  <ng-template #login>
   <span routerLink="/user">Account</span>
+  </ng-template>
 </mat-toolbar>
 <router-outlet></router-outlet>
   
