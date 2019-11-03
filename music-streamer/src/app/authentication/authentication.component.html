@@ -1,8 +1,12 @@
 <br>
 <div class="container">
     <mat-card>
-      <div *ngIf="auth.user$ | async as user;else login">
-        {{user|json}}
+      <div *ngIf="auth.user$ | async as user;else login" class="center">
+        Welcome {{user.displayName}}!!
+        <br>
+        <br>
+        <button mat-button class="primary" (click)="auth.signOut()">Sign Out</button>
+        
       </div>
       <ng-template #login>
         <form class="example-form">

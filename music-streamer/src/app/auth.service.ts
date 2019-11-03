@@ -44,7 +44,7 @@ export class AuthService {
       uid:user.uid,
       email:user.email,
       displayName:user.displayName,
-      photoUrl:user.photoUrl
+      
     };
        
 
