@@ -21,15 +21,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    HomeComponent,
-    RegisterComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -9,20 +9,7 @@
         
       </div>
       <ng-template #login>
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password" type="password">
-              </mat-form-field>
-              <button mat-button class="primary">Log In</button> &nbsp;
-              <button mat-button routerLink="/register">Sign Up</button>
-          </form>
-          <br>
-          Or
-          <br>
-          <br>
+       
           <button mat-button class="google" (click)="auth.doGoogleLogin()">
                 Sign In With Google
           </button>
