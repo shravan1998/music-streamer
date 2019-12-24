@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  playAudio(myAudio) {
+    myAudio.play();
+  }
+
 }

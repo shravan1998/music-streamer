@@ -9,7 +9,7 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
 
-  <audio controls="controls">
+  <audio controls="controls" #myAudio>
     <source src="https://res.cloudinary.com/dbetyfn5w/video/upload/v1575725077/music-files/In_The_End_Official_Video_-_Linkin_Park_vf5nof.mp3" type="audio/mpeg">
   </audio>
 </mat-expansion-panel>
@@ -20,7 +20,8 @@
   <br>
   In the End
   <br>
-  <button mat-button class="primary">Play</button>
+  <button mat-button class="primary" (click)="playAudio(myAudio)">Play</button>
+  <button mat-button class="primary">Pause</button>
 </mat-card>
 <mat-card>Simple card</mat-card>
 <mat-card>Simple card</mat-card>
