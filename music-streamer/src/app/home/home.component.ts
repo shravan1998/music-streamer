@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
     myAudio.play();
   }
 
+  pauseAudio(myAudio){
+    myAudio.pause();
+  }
+
 }
