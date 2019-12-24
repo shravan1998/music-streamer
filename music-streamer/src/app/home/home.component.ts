@@ -10,10 +10,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
-  playAudio(myAudio) {
+  playAudio(myAudio,link) {
     myAudio.play();
+    console.log(link.src);
   }
 
   pauseAudio(myAudio){

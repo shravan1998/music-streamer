@@ -10,7 +10,7 @@
   </mat-expansion-panel-header>
 
   <audio controls="controls" #myAudio>
-    <source src="https://res.cloudinary.com/dbetyfn5w/video/upload/v1575725077/music-files/In_The_End_Official_Video_-_Linkin_Park_vf5nof.mp3" type="audio/mpeg">
+    <source src="https://res.cloudinary.com/dbetyfn5w/video/upload/v1575725077/music-files/In_The_End_Official_Video_-_Linkin_Park_vf5nof.mp3" type="audio/mpeg" #audioLink>
   </audio>
 </mat-expansion-panel>
 <br>
@@ -20,7 +20,7 @@
   <br>
   In the End
   <br>
-  <button mat-button class="primary" (click)="playAudio(myAudio)">Play</button>
+  <button mat-button class="primary" (click)="playAudio(myAudio,audioLink)">Play</button>
   <button mat-button class="primary" (click)="pauseAudio(myAudio)">Pause</button>
 </mat-card>
 <mat-card>
@@ -28,7 +28,7 @@
   <br>
   End Of heartache
   <br>
-  <button mat-button class="primary" (click)="playAudio(myAudio)">Play</button>
+  <button mat-button class="primary" (click)="playAudio(myAudio,audioLink)">Play</button>
   <button mat-button class="primary" (click)="pauseAudio(myAudio)">Pause</button>
 </mat-card>
 
