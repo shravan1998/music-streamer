@@ -22,6 +22,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HomeComponent } from './home/home.component';
 
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { HomeComponent } from './home/home.component';
     MatExpansionModule,
     AngularFireModule.initializeApp(environment.firebase),
      AngularFirestoreModule,
-     AngularFireAuthModule
+     AngularFireAuthModule,
+     AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
