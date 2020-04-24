@@ -1,0 +1,26 @@
+<br>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title *ngIf="song!=null">
+        
+        {{song}} by {{artist}}
+      </mat-panel-title>
+      <mat-panel-description>
+        
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  
+    <audio controls="controls" #myAudio>
+      <source src="{{audioLink}}" type="audio/mpeg" #audioLink>
+    </audio>
+  </mat-expansion-panel>
+  <br>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search</mat-label>
+   <input matInput>
+    </mat-form-field>
+    <button mat-stroked-button color="accent">
+        <mat-icon aria-hidden="false" aria-label="Example search icon">search</mat-icon>
+    </button>
+</form>

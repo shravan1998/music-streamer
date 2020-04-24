@@ -23,6 +23,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { HomeComponent } from './home/home.component';
 
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -30,7 +31,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

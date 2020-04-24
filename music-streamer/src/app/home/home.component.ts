@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
   firestoreData: Observable<any[]>;
   musics;
   audioLink;
+  album;
+  artist;
+  song;
   constructor(private musicService:MusicService) {
    // musicService;
    }
@@ -28,13 +31,16 @@ export class HomeComponent implements OnInit {
   }
   
 
-  playAudio(myAudio,link,id) {
+  playAudio(myAudio,link,id,album,artist,song) {
     
     console.log(link);
     console.log(myAudio);
     myAudio.src=link;
     console.log(id);
     myAudio.play();
+    this.album=album;
+    this.artist=artist;
+    this.song=song;
   }
 
   pauseAudio(myAudio){
