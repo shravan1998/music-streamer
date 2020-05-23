@@ -3,7 +3,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title *ngIf="song!=null">
         
-        {{song}} by {{artist}}
+        {{song}} by {{Artist ||artist}}
       </mat-panel-title>
       <mat-panel-description>
         
@@ -18,9 +18,21 @@
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Search</mat-label>
-   <input matInput>
+   <input matInput [formControl]="searchstring">
     </mat-form-field>
-    <button mat-stroked-button color="accent">
+    <button mat-stroked-button color="accent" (click)="search()">
         <mat-icon aria-hidden="false" aria-label="Example search icon">search</mat-icon>
     </button>
 </form>
+<div class="container" >
+  <div *ngFor="let i of results">
+<mat-card>
+  <img src="{{i.img_link}}">
+  <br>
+  {{i.song}}
+  <br>
+  <button mat-button class="primary" (click)="playAudio(myAudio,i.link,i.id,i.album,i.artist,i.song)">Play</button>
+  <button mat-button class="primary" (click)="pauseAudio(myAudio)">Pause</button>
+</mat-card>
+</div>
+</div>

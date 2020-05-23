@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, 
 AngularFirestoreDocument } from '@angular/fire/firestore';
 import { FirebaseError } from 'firebase';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {AngularFireDatabase,AngularFireList} from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -122,6 +123,19 @@ import { map } from 'rxjs/operators';
       return error;
     });
   }
+
+  getMusics(start,end):
+  Observable<any>{
+    return this.db.collection(`music`, ref => ref
+    .orderBy("song")
+    .startAt(start)
+    .endAt(end+"\uf8ff")
+    .limit(10))
+    .valueChanges();
+    //console.log(self.results);
+  
+}
+  
 
 
  }

@@ -6,3 +6,9 @@
   .example-full-width {
     width: 100%;
   }
+  .container{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    
+}

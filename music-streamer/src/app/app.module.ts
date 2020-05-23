@@ -6,7 +6,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,7 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HomeComponent } from './home/home.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SearchComponent } from './search/search.component';
 
@@ -39,6 +39,8 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
@@ -55,7 +57,7 @@ import { SearchComponent } from './search/search.component';
      AngularFireAuthModule,
      AngularFireStorageModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
