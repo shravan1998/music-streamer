@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       // in the template you can use *ngFor="let business of businesses | async"
       this.musics=firestoreData;
     } );
-
+    
   }
   
 
@@ -45,6 +45,18 @@ export class HomeComponent implements OnInit {
 
   pauseAudio(myAudio){
     myAudio.pause();
+  }
+
+  library(image,link,id,album,artist,song){
+    var data={
+      'img_link':image,
+      'link':link,
+      'id':id,
+      'album':album,
+      'artist':artist,
+      'song':song
+    }
+    this.musicService.createCollectionItem('library',data);
   }
 
 }

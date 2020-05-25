@@ -3,7 +3,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title *ngIf="song!=null">
         
-        {{song}} by {{Artist ||artist}}
+        {{song}} by {{artist}}
       </mat-panel-title>
       <mat-panel-description>
         
@@ -31,6 +31,7 @@
   <br>
   {{i.song}}
   <br>
+  <button mat-button class="primary" (click)="library(i.img_link,i.link,i.id,i.album,i.artist,i.song)">Add To Library</button>
   <button mat-button class="primary" (click)="playAudio(myAudio,i.link,i.id,i.album,i.artist,i.song)">Play</button>
   <button mat-button class="primary" (click)="pauseAudio(myAudio)">Pause</button>
 </mat-card>

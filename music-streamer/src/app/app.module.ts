@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SearchComponent } from './search/search.component';
+import { LibraryComponent } from './library/library.component';
 
 
 
@@ -32,7 +33,8 @@ import { SearchComponent } from './search/search.component';
     AppComponent,
     AuthenticationComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
