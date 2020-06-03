@@ -72,8 +72,8 @@ import {AngularFireDatabase,AngularFireList} from '@angular/fire/database';
       map(changes => {
         return changes.map(change => {
           const data = change.payload.doc.data();
-          const id = change.payload.doc.id;
-          return { id, ...data };
+          data.collectionid = change.payload.doc.id;
+          return {  ...data };
         });
       }
       ));
@@ -112,7 +112,7 @@ import {AngularFireDatabase,AngularFireList} from '@angular/fire/database';
       return error;
     });
   }
-
+  
   createCollectionItem(path: string, data: object):
    Promise<any | FirebaseError> {
     return this.getCollectionRef(path).add(data)

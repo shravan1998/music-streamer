@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
   album;
   artist;
   song;
+ lib; 
+  libraryData: any;
+  documents: any;
   constructor(private musicService:MusicService) {
    // musicService;
    }
@@ -21,13 +24,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.firestoreData = this.musicService.getCollection('music');
 
-    this.firestoreData.subscribe(firestoreData => {
+    this.firestoreData.subscribe((firestoreData) => {
       console.log(firestoreData);
       console.log(firestoreData[0].id);
       // in the template you can use *ngFor="let business of businesses | async"
       this.musics=firestoreData;
     } );
-    
+  
+   // this.documents = this.musicService.getCollection('music-streamer-f88a5')
   }
   
 
@@ -47,16 +51,19 @@ export class HomeComponent implements OnInit {
     myAudio.pause();
   }
 
-  library(image,link,id,album,artist,song){
+  library(collectionid){
+    
     var data={
-      'img_link':image,
-      'link':link,
-      'id':id,
-      'album':album,
-      'artist':artist,
-      'song':song
+    'library':1
     }
-    this.musicService.createCollectionItem('library',data);
+    
+    this.musicService.updateDocument('music/'+collectionid,data);
   }
-
+  remove(collectionid){
+    console.log(collectionid);
+    var data={
+      'library':0
+    }
+    this.musicService.updateDocument('music/'+collectionid,data);
+  }
 }

@@ -14,22 +14,31 @@ export class LibraryComponent implements OnInit {
   album;
   artist;
   song;
+  Data: Observable<any[]>;
+  lib: any[];
   constructor(private musicService:MusicService) { }
 
   ngOnInit() {
     this.firestoreData = this.musicService.getCollection('music');
 
     this.firestoreData.subscribe(firestoreData => {
-      for(let i of firestoreData){
-        if(i.library){
+     
           console.log(firestoreData);
           console.log(firestoreData[0].id);
           // in the template you can use *ngFor="let business of businesses | async"
           this.musics=firestoreData;
         }
-      }
+      
      
-    } );
+    );
+   
+  }
+  remove(collectionid){
+    console.log(collectionid);
+    var data={
+      'library':0
+    }
+    this.musicService.updateDocument('music/'+collectionid,data);
   }
 
 }
